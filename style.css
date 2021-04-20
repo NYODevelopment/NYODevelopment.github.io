@@ -1,0 +1,380 @@
+/* reset */
+*
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+
+    font-weight: bold;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    vertical-align: baseline;
+
+    box-sizing: border-box;
+
+    transition: .5s;
+}
+
+html, body 
+{
+    width: 100%;
+    height: 100%;
+}
+
+/*animation*/
+
+@keyframes floatingAnim
+{
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, -2vw);}
+}
+
+/* container */
+
+body
+{
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.container
+{
+    width: 100%;
+    margin: auto;
+
+    overflow: hidden;
+}
+
+/* dark mode */
+#darkMode
+{
+    position: fixed;
+    display: inline-block;
+
+    top: 1vw;
+    right: 1vw;
+
+    width: 5vw;
+    height: 5vw;
+
+    z-index: 9999;
+    transition: 2s;
+}
+
+#darkMode:hover
+{
+    transform: rotateZ(360deg);
+}
+
+#darkMode img
+{
+    width: 100%;
+}
+
+/* menu */
+
+.menu
+{
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    justify-content: center;
+    align-content: space-around;
+
+    top: 25%;
+    left: 0;
+
+    width: 5%;
+    height: 20vw;
+    padding: 1vw 0;
+    border-radius: 0 2.5vw 2.5vw 0;
+    background-color: white;
+
+    z-index: 9999;
+}
+
+.menu div
+{
+    width: 3vw;
+    height: 3vw;
+}
+
+.menu div a
+{
+    transition: .2s;
+}
+
+.menu div a img
+{
+    width: 100%;
+    opacity: .6;
+
+    transition: .3s;
+}
+
+.menu div a img:hover
+{
+    opacity: 1;
+    transform: rotateZ(360deg);
+}
+
+.menu div :hover{color: #9bbbbe;}
+
+/* main */
+
+.main 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 100%;
+    padding-top: 7.5vw;
+    padding-bottom: 10vw;
+}
+
+.lightMain
+{
+    background-color: #d8eff2;
+}
+
+.darkMain
+{
+    background-color: rgb(40,40,40);
+}
+
+.main .imgContainer
+{
+    position: relative;
+
+    width: 50%;
+    height: 23vw;
+}
+
+.logo
+{
+    position: absolute;
+
+    width: 50%;
+
+    left: 25%;
+    top: 5%;
+
+    animation: floatingAnim 3s ease-in-out infinite alternate;
+    z-index: 2;
+}
+
+.logobg
+{
+    position: absolute;
+
+    width: 75%;
+
+    left: 15%;
+    top: 0;
+
+    animation: floatingAnim 3s ease-in-out infinite alternate;
+    animation-delay: 1s;
+    z-index: 1;
+}
+
+
+.main .title
+{
+    position: absolute;
+
+    width: 50%;
+
+    left: 15%;
+    top: 25%;
+
+    animation: floatingAnim 3s ease-in-out infinite alternate;
+    animation-delay: 2s;   
+    z-index: 1; 
+}
+
+.main .subtitle
+{
+    position: absolute;
+
+    width: 30%;
+
+    left: 15%;
+    top: 90%;
+
+    animation: floatingAnim 3s ease-in-out infinite alternate;
+    animation-delay: 3s;
+    z-index: 1;
+}
+
+/* description */
+
+.description
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+    width: 89.5%;
+    padding: 5%;
+    margin: auto;
+    border-radius: 5vw 50vw 5vw 50vw;
+}
+
+.lightDescription
+{
+    background-color: white;
+    color: #2e686f;
+}
+
+.darkDescription
+{
+    background-color: rgb(50,50,50);
+    color: white;
+}
+
+.description div
+{
+    position: relative;
+    
+    width: 50%;
+    height: 50vw;
+    padding: 5%;
+}
+
+.text1, .text2
+{
+
+    font-size: 3vw;
+}
+
+.text1
+{
+    left: 0;
+}
+.text2
+{
+    right: 0;
+    text-align: right;
+}
+
+.image1, .image2
+{
+    position: absolute;
+
+    width: 80%;
+
+    animation: floatingAnim 3s ease-in-out infinite alternate;
+    z-index: 1;
+}
+
+/* banner */
+
+.bannerContainer
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 90%;
+    padding: 10vw 0;
+    margin: auto;
+}
+
+.banner
+{
+    width: 100vw;
+    height: 30vw;
+
+    margin: .25vw .25vw;
+    border-radius: 7.5vw;
+    background-color: white;
+}
+
+.bannerContainer .banner:nth-child(2)
+{
+    width: 40vw;
+}
+
+.bannerContainer .banner:nth-child(3)
+{
+    width: 40vw;
+}
+
+@media (max-width: 1028px)
+{
+    #darkMode
+    {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .menu
+    {
+        top: 30%;
+        left: 0;
+    
+        width: 50px;
+        height: 250px;
+        padding: 25px 0;
+        border-radius: 0 40px 40px 0;
+    }
+
+    .menu div
+    {
+        width: 35px;
+        height: 35px;
+        margin: 0;
+    }
+
+    .main .imgContainer
+    {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main .imgContainer:nth-child(1){
+        margin: 20vw 0;
+    }
+
+    .main .imgContainer:nth-child(2){
+        margin: 30vw 0;
+        left: 10%;
+    }
+
+    .main .imgContainer .subtitle
+    {
+        top: 150%;
+    }
+
+    .description
+    {
+        align-content: center;
+        flex-direction: column;
+    }
+
+    .text1, .text2
+    {
+        font-size: 4vw;
+    }
+
+    .description div:nth-child(1){
+        order: 2;
+    }
+    .description div:nth-child(2){
+        order: 1;
+    }
+    .description:nth-child(3){
+        order: 3;
+    }
+    .description:nth-child(4){
+        order: 4;
+    }
+
+    .image1, .image2
+    {
+        width: 100%;
+    }
+}
